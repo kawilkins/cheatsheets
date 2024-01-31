@@ -1,6 +1,9 @@
 Git Cheatsheet
 ===============
 
+# Table of Contents
+- [Branch Management](#Branch-Management)
+
 # Branch Management
 
 ## Create a new branch
