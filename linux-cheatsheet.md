@@ -3,6 +3,7 @@ Linux Cheatsheet
 
 # Table of Contents
 - [User Management](#User-Management)
+- [File Management](#File-Management)
 
 # User Management 
 
@@ -47,3 +48,16 @@ chage -d 0 username
 ```
 
 What this command does is use the `-d` flag/option to set the age limit of the password to `0`.  This effectively causes the password to immediately expire.  When the user logs in with the password, they will be prompted to change their password.
+
+## Change user type
+
+It is entirely possible to change a user from a "regular" user to a system user.  As super user:
+
+```bash
+cd /var/lib/AccountsService/users/
+```
+
+Edit the file that corresponds with the user you are editing.  The boolean value of `SystemAccount` is by default set to false.
+
+# File Management
+
