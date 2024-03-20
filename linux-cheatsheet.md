@@ -12,7 +12,7 @@ Linux Cheatsheet
 Let us add a user.
 
 ```bash
-adduser -m username
+useradd -m username
 ```
 
 This will add a user with a home directory.  Replace `username` with the username of your choice.
@@ -20,7 +20,7 @@ This will add a user with a home directory.  Replace `username` with the usernam
 For login screens where seeing a users actual name instead of their username add a `-C` as follows:
 
 ```bash
-adduser -m username -C "Full Name"
+useradd -m username -C "Full Name"
 ```
 
 The option `-C` denotes that we are commenting the user as their proper name.  Replace `Full Name` with the desired or proper name of the user.
@@ -51,7 +51,7 @@ What this command does is use the `-d` flag/option to set the age limit of the p
 
 ## Change user type
 
-It is entirely possible to change a user from a "regular" user to a system user.  As super user:
+It is entirely possible to change a user from a "regular" user to a system user.  For example, you might have a system administrator user account that you don't want shown on the login page.  As super user:
 
 ```bash
 cd /var/lib/AccountsService/users/
