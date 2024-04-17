@@ -3,7 +3,7 @@ Git Cheatsheet
 
 # Table of Contents
 - [Branch Management](#Branch-Management)
-- [Git Push/Pull Errors](Git-pull-and-push-errors)
+- [Git pull and push errors](#Git-pull-and-push-errors)
 
 # Branch Management
 
@@ -61,5 +61,4 @@ git reset --hard origin/branch_name
 
 This will bring the branch you are working in up to date to the state of the remote branch.
 Simply change `branch_name` to the name of your branch.
-
 
