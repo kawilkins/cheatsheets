@@ -67,6 +67,19 @@ cd /var/lib/AccountsService/users/
 Edit the file that corresponds with the user you are editing.
 The boolean value of `SystemAccount` is by default set to false.
 
+## Log out user
+
+You are able to use the CLI to log out a user.
+This can be done using the following command:
+
+```bash
+killall -u username
+```
+
+The `killall` command has the flag `-u` to tell the system to terminate processes owned by a particular user.
+Replace `username` with the username.
+This will result in that user getting logged out of their session.
+
 # SSH Key Generation
 
 ## ED25519
