@@ -4,6 +4,7 @@ Linux Cheatsheet
 # Table of Contents
 - [User Management](#User-Management)
 - [SSH Key Generation](#SSH-Key-Generation)
+- [Creating a tarball/archive](#Creating-a-tarball)
 
 # User Management 
 
@@ -103,3 +104,86 @@ However, checking with your system administrator regarding the specific SSH key 
 
 Additionally, you may use the `-C` flag to comment each SSH key.
 Some network resources or online services may require or recommend a comment.
+
+# Creating a tarball (archive file)
+
+There may come a time when creating an archive (compressed) file is necessary.
+Perhaps it is time to save space, but saving the data is important.
+Or you may be manually copying a log of files to a new machine.
+This is when creating a tarball (tarring a file or directory) is useful.
+
+## Compressing a directory
+
+To compress a directory simply execute:
+
+```
+tar -czvf nameoffile.tar.gz /path/to/directory
+```
+
+Where `c` creates the new archive, `z` filters the the archive through `gzip`, `v` gives verbose output, and `f` use the specified archive file (i.e. `nameoffile.tar.gz`).
+
+Replace `nameoffile` with an easy to identify filename.
+Replace `/path/to/directory` with the full filepath of the directory.
+
+### Excluding a file or directory
+
+Let us assume that you are creating a tarball of `/path/to/directory` which contains `dir01`, `dir02`, and `dir03`.
+For archiving purposes you do not need the contents of `dir02`.
+You can exclude `dir02` by executing the following:
+
+```
+tar -czvf nameoffile.tar.gz --exclude='dir02' /path/to/directory
+```
+
+In this example we are excluding `dir02`.
+The `--exclude` flag cannot contain a list of files or directories, so the flag will have to be used for each file or directory you want to exclude.
+There is an easier way.
+
+#### Use an exclude file
+
+1. Using your text editor create a file (i.e. `exclude.txt`) and fill each line of the file with a different file or directory as below:
+
+```
+dir02
+dir04
+file3
+file4
+file9
+```
+
+2. Save the file.
+3. Execute the following:
+
+```
+tar -czvf nameoffile.tar.gz -X exclude.txt /path/to/directory
+```
+
+What this will do is exclude any files listed in the exclude file while it creates the archive.
+
+## Check the contents of a tarball
+
+You can check the contents of a tarball by executing:
+
+```
+tar -ztvf nameoffile.tar.gz
+```
+
+Where `t` lists the contents of the archive.  Flags `z`, `v`, and `f` do as described above.
+
+## Unpacking a tarball
+
+You can unpack the contents of an archive by executing the following:
+
+```
+tar -xzvf nameoffile.tar.gz
+```
+
+Where the `x` flag extracts from the archive.
+
+To extract to a specific path execute:
+
+```
+tar -xzvf nameoffile.tar.gz -C /path/to/destination/
+```
+
+Where `-C` changes the target directory to the directory path specified.
