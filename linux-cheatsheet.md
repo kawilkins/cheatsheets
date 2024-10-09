@@ -4,7 +4,8 @@ Linux Cheatsheet
 # Table of Contents
 - [User Management](#User-Management)
 - [SSH Key Generation](#SSH-Key-Generation)
-- [Creating a tarball/archive](#Creating-a-tarball)
+- [Creating a tarball/archive](#creating-a-tarball-archive-file)
+https://github.com/kawilkins/cheatsheets/blob/master/linux-cheatsheet.md#creating-a-tarball-archive-file
 
 # User Management 
 
